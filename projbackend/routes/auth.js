@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-const { signup, signout } = require("../controllers/auth");
+const { signup, signout, signin } = require("../controllers/auth");
 const { check, validationResult } = require("express-validator");
 
 // authentication routes
@@ -22,6 +22,17 @@ router.post(
       ),
   ],
   signup
+);
+
+router.post(
+  "/signin",
+  [
+    check("email").isEmail().withMessage("Innvalid username or password"),
+    check("password")
+      .isLength({ min: 1 })
+      .withMessage("Please enter a password"),
+  ],
+  signin
 );
 router.get("/signout", signout);
 
