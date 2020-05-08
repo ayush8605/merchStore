@@ -10,6 +10,7 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth");
 
 // connect to the mongoDB
+// toStart : "C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
 mongoose
   .connect(process.env.DATABASE, {
     useNewUrlParser: true,
