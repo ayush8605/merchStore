@@ -1,7 +1,7 @@
 const User = require("../models/user");
 const { check, validationResult } = require("express-validator");
-var jwt = require("jsonwebtoken");
-var expressJwt = require("express-jwt");
+var jwt = require("jsonwebtoken"); // To create a json web token to authenticate the user
+var expressJwt = require("express-jwt"); // Middleware to validate json web token when sent as a bearer in request.
 
 exports.signup = (req, res) => {
   console.log("REQ BODY: ", req.body);
@@ -78,7 +78,7 @@ exports.isSignedIn = expressJwt({
 
 //custom middlewares
 exports.isAuthenticated = (req, res, next) => {
-  let checker = req.profile && req.auth && req.profile._id === req.auth._id;
+  let checker = req.profile && req.auth && req.profile._id == req.auth._id;
   if (!checker) {
     return res.status(403).json({
       error: "ACCESS DENIED",

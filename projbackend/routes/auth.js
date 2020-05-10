@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 const { signup, signout, signin } = require("../controllers/auth");
-const { check, validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator"); // To validate the input given by the user
 
 // authentication routes
 router.post(
@@ -27,7 +27,7 @@ router.post(
 router.post(
   "/signin",
   [
-    check("email").isEmail().withMessage("Innvalid username or password"),
+    check("email").isEmail().withMessage("Invalid username or password"),
     check("password")
       .isLength({ min: 1 })
       .withMessage("Please enter a password"),

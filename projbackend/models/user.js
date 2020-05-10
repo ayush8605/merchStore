@@ -55,11 +55,13 @@ userSchema
   });
 
 userSchema.methods = {
+  // To authenticate a user
   authenticate: function (plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password;
   },
 
   securePassword: function (plainPassword) {
+    // Encrypt the plain password before storing it into the DB
     if (!plainPassword) return "";
     try {
       return crypto

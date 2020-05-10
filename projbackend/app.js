@@ -1,13 +1,14 @@
-require("dotenv").config();
+require("dotenv").config(); // to use the environment variables set in .env file
 const mongoose = require("mongoose");
 
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser"); // used to parse the request object in an http request
+const cookieParser = require("cookie-parser"); // To access the cookies stored in the user's browser
 const cors = require("cors");
 
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 // connect to the mongoDB
 // toStart : "C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"
@@ -28,6 +29,7 @@ app.use(cors());
 
 //My Routes
 app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 const port = process.env.PORT; // Port number
 
