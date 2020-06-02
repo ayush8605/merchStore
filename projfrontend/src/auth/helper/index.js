@@ -5,7 +5,7 @@ export const signup = (user) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
   })
@@ -20,7 +20,7 @@ export const signin = (user) => {
     method: "POST",
     headers: {
       Accept: "application/json",
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify(user),
   })
@@ -31,14 +31,14 @@ export const signin = (user) => {
 };
 
 export const authenticate = (data, next) => {
-  if (typeof window != undefined) {
+  if (typeof window !== "undefined") {
     localStorage.setItem("jwt", JSON.stringify(data));
     next();
   }
 };
 
 export const signout = (next) => {
-  if (typeof window != undefined) {
+  if (typeof window !== "undefined") {
     localStorage.removeItem("jwt");
     next();
 
@@ -50,7 +50,7 @@ export const signout = (next) => {
   }
 };
 
-export const isAthenticated = () => {
+export const isAuthenticated = () => {
   if (typeof window == "undefined") {
     return false;
   }
