@@ -54,7 +54,7 @@ const Signup = () => {
             className="alert alert-success"
             style={{ display: success ? "" : "none" }}
           >
-            New account has been created successfully. Please{" "}
+            New account has been created successfully. Please login
             <Link to="/signin">Login Here</Link>
           </div>
         </div>
@@ -86,7 +86,7 @@ const Signup = () => {
               <label className="text-light">Name</label>
               <input
                 type="text"
-                onClick={handleChange("name")}
+                onChange={handleChange("name")}
                 className="form-control"
               ></input>
             </div>
@@ -94,7 +94,7 @@ const Signup = () => {
               <label className="text-light">Email</label>
               <input
                 type="email"
-                onClick={handleChange("email")}
+                onChange={handleChange("email")}
                 className="form-control"
               ></input>
             </div>
@@ -102,7 +102,7 @@ const Signup = () => {
               <label className="text-light">Password</label>
               <input
                 type="password"
-                onClick={handleChange("password")}
+                onChange={handleChange("password")}
                 className="form-control"
               ></input>
             </div>
