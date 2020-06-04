@@ -11,7 +11,7 @@ import {
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "tulip@gmail.com",
+    email: "tulip@gmail.com/ john@cdf.com",
     password: "123456",
     error: "",
     loading: false,
@@ -47,9 +47,9 @@ const Signin = () => {
   const performRedirect = () => {
     if (didRedirect) {
       if (user && user.role === 1) {
-        return <p>redirect to admin</p>;
+        return <Redirect to="/admin/dashboard" />;
       } else {
-        return <p>redirect to user dashboard</p>;
+        return <Redirect to="/user/dashboard" />;
       }
     }
     if (isAuthenticated()) {
