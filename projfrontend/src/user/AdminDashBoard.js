@@ -12,10 +12,15 @@ const AdminDashBoard = () => {
     return (
       <div className="card">
         <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
-      <ul className="list-group">
-        <li className="list-group-item">
+        <ul className="list-group">
+          <li className="list-group-item">
             <Link to="/admin/create/category" className="nav-link text-success">
               Create Categories
+            </Link>
+          </li>
+          <li className="list-group-item">
+            <Link to="/admin/categories" className="nav-link text-success">
+              Manage Categories
             </Link>
           </li>
           <li className="list-group-item">
@@ -33,8 +38,7 @@ const AdminDashBoard = () => {
               Manage Orders
             </Link>
           </li>
-      </ul>
-      
+        </ul>
       </div>
     );
   };
@@ -53,7 +57,6 @@ const AdminDashBoard = () => {
           <li className="list-group-item">
             <span className="badge badge-danger">Admin Area</span>
           </li>
-        
         </ul>
       </div>
     );
