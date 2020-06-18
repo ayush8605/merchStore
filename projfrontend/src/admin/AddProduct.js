@@ -7,7 +7,6 @@ import {
   getCategories,
   createProduct,
 } from "./helper/adminapicall";
-import { cleanup } from "@testing-library/react";
 
 const AddProduct = () => {
   const { user, authToken } = isAuthenticated();
